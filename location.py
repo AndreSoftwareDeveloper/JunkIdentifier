@@ -19,4 +19,3 @@ def get_disposal_point_location(api_key, disposal_point_category):
     longitude = coordinates["longitude"]
     return f"https://www.google.com/maps/search/{disposal_point_category}/@{latitude},{longitude}" \
            f",11z/data=!3m1!4b1?entry=ttu"  # TODO change magic string to something smarter
-

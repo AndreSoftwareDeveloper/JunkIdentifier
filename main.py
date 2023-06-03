@@ -2,6 +2,7 @@ from kivy.app import App
 from kivy.uix.button import Button
 from kivy.utils import platform
 from jnius import autoclass
+from location import get_disposal_point_location
 
 
 class OpenBrowserApp(App):
@@ -16,7 +17,7 @@ class OpenBrowserApp(App):
         current_activity.startActivity(intent)
 
     def build(self):
-        url = "https://www.google.com"
+        url = get_disposal_point_location("AIzaSyDmBgSA-GRX0vva8DgID438EvCBzycUwS4", "PSZOK")
         button = Button(text='Open Browser', on_release=lambda x: self.open_browser(url))
         return button
 
