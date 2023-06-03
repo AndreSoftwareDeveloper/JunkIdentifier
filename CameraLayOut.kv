@@ -1,0 +1,28 @@
+<CameraScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        Camera:
+            id: camera
+            resolution: (640, 480)
+            play: True
+
+        Button:
+            id: btn
+            markup: True
+            halign: "center"
+            size_hint: (None,None)
+            size: (130,130)
+            pos_hint:{'x':0.8,'y':.1}
+            background_normal:''
+            background_color: (0,0,0,0)
+            on_press: root.capture()
+            canvas.before:
+                Color:
+                    rgba: (255,255,255, 0.9)
+                Ellipse:
+                    size: self.size
+                    pos: self.pos
+            Image:
+                source:'photo_img.png'
+                center_x: self.parent.center_x
+                center_y: self.parent.center_y

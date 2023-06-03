@@ -1,0 +1,38 @@
+<MainScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        TextInput:
+
+            height: 0.1 * root.height
+            width: 1 * root.width
+            pos_hint: {'center_x': 0.5}
+
+        Button:
+            text: 'Submit'
+            size_hint: 0.5, 0.1
+            pos_hint: {'center_x': 0.5}
+
+        Label:
+            size_hint: None, None
+            size:100,400
+
+        Button:
+            markup: True
+            size_hint: (None,None)
+            size: (130,130)
+            pos_hint:{'x':0.8,'y':.1}
+            background_normal:''
+            background_color: (0,0,0,0)
+            on_press: root.manager.current = 'camera'
+            canvas.before:
+                Color:
+                    rgba: (255,255,255, 0.9)
+                Ellipse:
+                    size: self.size
+                    pos: self.pos
+            Image:
+                source:'photo_img.png'
+                center_x: self.parent.center_x
+                center_y: self.parent.center_y
+
+
